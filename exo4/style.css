@@ -1,0 +1,28 @@
+body {
+background: linear-gradient(#e66465, #9198e5);
+background-repeat: no-repeat;
+min-height: 100vh;
+
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+}
+
+.container select {
+    width: 15rem;
+    text-align: center;
+    margin: 3px;
+}
+
+.hero {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+}
