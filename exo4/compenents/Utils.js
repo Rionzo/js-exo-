@@ -8,7 +8,7 @@ export default class Utils {
    * @param {Object} attribute  (doit comprendre les propriétés name et value)
    * @returns domElement
    */
-  createMarkup(markup_name, text, parent, attribute) {
+  static createMarkup(markup_name, text, parent, attribute) {
     const markup = document.createElement(markup_name);
     markup.textContent = text;
     parent.appendChild(markup);

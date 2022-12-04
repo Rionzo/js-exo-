@@ -1,17 +1,16 @@
 class LocationFetch {
   regions = [];
-  static fetch_location(url) {
-    console.log(url);
-    fetch(url)
-      .then((response) => {
-        console.log("response", response);
-        return response.json();
-      })
-      .then((data) => {
-        console.log("data", data);
-        return data;
-      })
-      .catch((error) => console.log("error", error));
+  static async fetch_location(url) {
+    try {
+      const database = await fetch(url);
+      const data = await database.json();
+      if (!data || !database.ok) {
+        throw new Error("Failed to fetch");
+      }
+      return data;
+    } catch (err) {
+      console.log("error:", err);
+    }
   }
 }
 
