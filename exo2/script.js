@@ -33,29 +33,37 @@ const btnFooter = createMarkup({
   attributes: [{ name: "id", value: "btn-footer" }],
 });
 
-function Header() {
-  btnHeader.addEventListener("click", function () {
-    document.querySelector("button").style.visibility = "hidden";
-    this.innerHTML = "<header id='btn-header'><p>header ici</p></header>";
-    document.querySelector("header").style.visibility = "visible";
+const buttons = document.querySelectorAll("button");
+buttons.forEach((elem) => {
+  elem.addEventListener("click", function () {
+    if (elem.textContent == "btn-Footer") {
+      createMarkup({
+        markup_name: "p",
+        text: "footer ici",
+        parent: document.body,
+        attributes: [{ name: "id", value: "btn-footer" }],
+      });
+    }
+    if (elem.textContent == "btn-Header") {
+      createMarkup({
+        markup_name: "p",
+        text: "header ici",
+        parent: document.body,
+        attributes: [{ name: "id", value: "btn-header" }],
+      });
+    }
+    if (elem.textContent == "btn-Main") {
+      createMarkup({
+        markup_name: "p",
+        text: "main ici",
+        parent: document.body,
+        attributes: [{ name: "id", value: "btn-header" }],
+      });
+    }
+    elem.remove();
   });
-}
+});
 
-function Main() {
-  btnMain.addEventListener("click", function () {
-    document.querySelector("button").style.visibility = "hidden";
-    this.innerHTML = "<main id='btn-main'><p>main ici</p></main>";
-    document.querySelector("main").style.visibility = "visible";
-  });
-}
-
-function Footer() {
-  btnFooter.addEventListener("click", function () {
-    document.querySelector("button").style.visibility = "hidden";
-    this.innerHTML = "<footer id='btn-footer'><p>footer ici</p></footer>";
-    document.querySelector("footer").style.visibility = "visible";
-  });
-}
 Header();
 Main();
 Footer();
